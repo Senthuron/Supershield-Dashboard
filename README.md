@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Supershield Dashboard
 
-## Getting Started
+A modern, responsive admin dashboard for managing contact form submissions, enquiries, and career applications. Built with Next.js 15, TypeScript, and MongoDB.
 
-First, run the development server:
+## 🚀 Features
+
+- **Submission Management**: View and track various types of submissions (Contact, Enquiry, Career) from a centralized dashboard.
+- **Real-time Filtering**: Filter submissions by category:
+  - **All**: View all submissions.
+  - **Contact**: General contact requests.
+  - **Enquiry**: Business or service-related enquiries.
+  - **Career**: Job applications and resume submissions.
+- **Detailed View**: See key details like Name, Company, Contact Info, Location, and Message at a glance.
+- **Responsive Design**: Optimized for desktops and tablets using Tailwind CSS.
+- **Secure Access**: Simple bearer token authentication for API routes.
+
+## 🛠️ Technology Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Frontend**: [React 19](https://react.dev/), [Tailwind CSS](https://tailwindcss.com/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Database**: [MongoDB](https://www.mongodb.com/) using the native Node.js driver.
+
+## 🏁 Getting Started
+
+Follow these instructions to get the project up and running on your local machine.
+
+### Prerequisites
+
+- **Node.js**: Ensure you have Node.js installed (v18 or higher recommended).
+- **MongoDB**: You need a MongoDB instance (local or Atlas) to connect to.
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    cd Supershield-Dashboard
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
+
+### Environment Variables
+
+Create a `.env` or `.env.local` file in the root directory and add the following variables:
+
+```env
+# Connection string for your MongoDB database
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<dbname>
+
+# Secret key for simple API authorization
+NEXT_PUBLIC_DASHBOARD_SECRET_KEY=your_secret_key_here
+```
+
+### Running the Application
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+.
+├── app/
+│   ├── api/            # API Routes (Server-side logic)
+│   ├── page.tsx        # Main Dashboard Page (Client Component)
+│   ├── layout.tsx      # Root layout
+│   └── globals.css     # Global styles and Tailwind directives
+├── lib/
+│   └── mongodb.js      # MongoDB connection helper
+├── public/             # Static assets
+└── package.json        # Project dependencies and scripts
+```
 
-## Learn More
+## 📜 License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is private and proprietary.
